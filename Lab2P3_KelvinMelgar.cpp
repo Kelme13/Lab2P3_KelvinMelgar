@@ -15,6 +15,26 @@ int genRand() {
 }
 
 
+// Calcular factorial
+int Factorial(int n) {
+
+    if (n > 0) {
+        return n * Factorial(n -1);
+    }return 1;
+
+}
+
+void dibujarT(int n) {
+    for (int i = 1; i < n; i++)
+    {
+        for (int e= 1; e <= i; e++)
+        {
+            cout << "*";
+        }
+
+        cout << "\n";
+    }
+}
 
 int main() {
     
@@ -33,10 +53,9 @@ int main() {
 
     do
     {
-        switch (opcion)
-        {
-        case 1:
-        {
+
+        if (opcion == 1) {
+
             char letras[10];
 
             for (int i = 0; i < 10; i++) {
@@ -49,7 +68,24 @@ int main() {
                 cout << letras[i] << " ";
             }
 
-            // Letras unicas arreglo
+            //Ordenar
+            for (int i = 0; i < 10; i++) {
+                for (int e = 0; e < 9; e++) {
+
+
+                    if (letras[e] > letras[e + 1]) {
+                        char m = letras[e + 1];
+                        letras[e + 1] = letras[e];
+                        letras[e] = m;
+
+                    }
+
+                }
+
+            }
+
+
+            // Letras unicas arreglo (lista)
             list<char> letras_u;
             letras_u.push_back(letras[0]);
 
@@ -62,27 +98,31 @@ int main() {
                 }
             }
 
+            cout << "\nArreglo Final: ";
             // para iterar la lista
-            const int tam = letras_u.size();
+            list <char> ::iterator e;
+            for (e = letras_u.begin(); e != letras_u.end(); e++)
+            {
+                cout << *e << " ";
+            }
 
 
-
-            break;
         }
+        else if (opcion == 2) {
 
+            int n;
+            cout << "\nIngrese un entero positivo: ";
+            cin >> n;
 
-        case 2:
-        {
-            break;
+            cout << "\nSu factorial es: " << Factorial(n) << "\n";
+            dibujarT(Factorial(n));
+
         }
-
-        case 3:
+        else if (opcion == 3) {
             cout << "\nSaliendo\n\n";
-            break;
-
-        default:
+        }
+        else {
             cout << "\nOpcion invalida\n\n";
-            break;
         }
 
         cout << "\n--------------------------------";
