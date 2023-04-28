@@ -16,6 +16,12 @@ int genRand() {
 
 
 // Calcular factorial
+/*
+    Mientras el numero sea mayor a 0, 
+    ira retornando este mismo numero restandole una
+    unidad multiplicandolo por ese numero actual, cuando
+    llegue a 0, retorna 1 para retornar ese valor total;
+*/
 int Factorial(int n) {
 
     if (n > 0) {
@@ -69,9 +75,16 @@ int main() {
             }
 
             //Ordenar
+
+            /*
+                Conciste en ir intercambiar cada letra, si esta primera
+                es mayor que la que esta delante, en ese punto se intercambian
+                valores hasta que llegue un punto que que sea mayor, esto se realiza, 
+                en las iteracciones y validaciones, 
+                
+            */
             for (int i = 0; i < 10; i++) {
                 for (int e = 0; e < 9; e++) {
-
 
                     if (letras[e] > letras[e + 1]) {
                         char m = letras[e + 1];
@@ -114,8 +127,14 @@ int main() {
             cout << "\nIngrese un entero positivo: ";
             cin >> n;
 
-            cout << "\nSu factorial es: " << Factorial(n) << "\n";
-            dibujarT(Factorial(n));
+            if (n > 0) {
+                cout << "\nSu factorial es: " << Factorial(n) << "\n";
+                dibujarT(Factorial(n));
+            } else {
+                cout << "\nNumero invalido...";
+            }
+
+            
 
         }
         else if (opcion == 3) {
