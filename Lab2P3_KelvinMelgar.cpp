@@ -1,8 +1,12 @@
 #include <iostream>
+#include <list>
 #include "stdlib.h"
+
+
 #include "time.h"
 
 using namespace std;
+
 
 //generador de ENTEROS
 int genRand() {
@@ -10,14 +14,7 @@ int genRand() {
     return 97 + rand() % 26;
 }
 
-// Ordenar el arreglo
 
-char[] ordenarArreglo(char[] a) {
-
-
-
-    return char[];
-}
 
 int main() {
     
@@ -51,6 +48,23 @@ int main() {
             for (int i = 0; i < 10; i++) {
                 cout << letras[i] << " ";
             }
+
+            // Letras unicas arreglo
+            list<char> letras_u;
+            letras_u.push_back(letras[0]);
+
+            for (int i = 1; i < 10; i++)
+            {
+                //busca la letra
+                auto m = find(letras_u.begin(), letras_u.end(), letras[i]);
+                if (m == letras_u.end()) {
+                    letras_u.push_back(letras[i]);
+                }
+            }
+
+            // para iterar la lista
+            const int tam = letras_u.size();
+
 
 
             break;
